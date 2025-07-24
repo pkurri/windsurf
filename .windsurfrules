@@ -1,0 +1,85 @@
+# Windsurf Rules
+
+## core-operating-principles
+
+- Follow user instructions precisely.
+- Ask for clarification when needed.
+- Identify technical constraints before suggesting solutions.
+- Stay within instruction scope.
+- Report progress and confirm critical decisions.
+
+## project-structure
+
+Project root: `/project-root`
+Key directories:
+
+- `/src`: Source code (e.g., `/src/auth`, `/src/payment`).
+- `/docs`: Documentation (`README.md`, `ARCHITECTURE.md`).
+- `/tests`: Tests mirroring `/src`.
+- `/config`: Config files (`env.json`, `database.yml`).
+Prioritize these for suggestions.
+
+## technologies
+
+- Backend: Node.js v20, Express.js v4.18
+- Frontend: React v18, TypeScript, Vite
+- Database: PostgreSQL v15, Prisma ORM
+- Testing: Jest, Cypress
+Only suggest compatible code.
+
+## coding-standards
+
+- Naming: files (kebab-case), variables (camelCase), components (PascalCase), tables (snake_case)
+- Files < 250 lines; suggest refactoring
+- Avoid deprecated patterns: use functional components, async/await, Prisma ORM
+
+## quality-management
+
+- Enforce strict TypeScript type checking
+- Ensure ESLint compliance
+- Prevent unnecessary re-renders in React
+- Optimize data fetching and bundle size
+- Validate inputs and secure sensitive data
+- Ensure responsive design and accessibility
+
+## development-workflow
+
+- Kill related servers before starting new ones
+- Start server after changes for testing
+- Make only requested changes
+- Consider affected code areas
+- Maintain pattern consistency unless instructed
+
+## version-control
+
+- No unstaged files after commit
+- No new branches without request
+- No `.env` commits
+- Confirm before overwriting `.env`
+
+## best-practices
+
+- Avoid one-time scripts in permanent files
+- No mocking except in tests
+- Exhaust existing implementations
+- Remove outdated code when introducing new solutions
+
+## error-handling
+
+- Analyze error messages and scope impact
+- Isolate root cause and evaluate multiple solutions
+- Implement and test the optimal solution
+- Record problem and solution in `/docs/ERROR_LOG.md`
+- Propose preventive measures
+
+## preventing-hallucinations
+
+- Verify suggestions against codebase (`/src`, `/tests`)
+- Avoid assuming external APIs unless in `/config` or `/docs`
+- Cross-check with `/docs/ARCHITECTURE.md`
+
+## reinforcing-learning
+
+- Track recent changes in `/src` and `/tests` via git history
+- Store feedback in `/docs/FEEDBACK_LOG.md` for long-term learning
+- Maintain Adaptive Project State (APS) with task progression and lessons learned
